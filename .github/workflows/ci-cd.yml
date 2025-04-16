@@ -33,11 +33,11 @@ jobs:
 
 
       - name: Deploy Application
-        shell: pwsh
+        shell: powershell
         run: |
-          # Остановить ранее запущенное приложение (если есть)
-          Get-Process node -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.Id -Force }
-          Start-Process -FilePath "node" -ArgumentList "app.js" -NoNewWindow
+         Get-Process node -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.Id -Force }
+         Start-Process -FilePath "node" -ArgumentList "app.js" -NoNewWindow
+
           
       - name: Notify Deployment
         run: echo "NodeJS Application deployed successfully!"
