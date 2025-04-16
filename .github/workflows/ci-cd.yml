@@ -22,20 +22,23 @@ jobs:
         run: npm install
 
       - name: Run Tests
-        shell: bash 
+        shell: powershell
         run: |
-          if [ -f package.json ] && grep -q "\"test\":" package.json; then 
-            npm test; 
-          else 
-            echo "No tests defined"; 
-          fi
+         if ((Test-Path package.json) -and ((Get-Content package.json | Select-String '"test":'))) {
+         npm test
+         } else {
+           Write-Output "No tests defined"
+         }
+
+
+
 
       - name: Deploy Application
-        shell: pwsh
+        shell: powershell
         run: |
-          # Остановить ранее запущенное приложение (если есть)
-          Get-Process node -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.Id -Force }
-          Start-Process -FilePath "node" -ArgumentList "app.js" -NoNewWindow
+         Get-Process node -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.Id -Force }
+         Start-Process -FilePath "node" -ArgumentList "app.js" -NoNewWindow
+
           
       - name: Notify Deployment
         run: echo "NodeJS Application deployed successfully!"
