@@ -21,14 +21,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Tests 
-        shell: pwsh
+      - name: Run Tests
+        shell: powershell
         run: |
           if (Test-Path package.json -and (Get-Content package.json | Select-String '"test":')) {
-              npm test
-          } else {
-              Write-Output "No tests defined"
+          npm test
           }
+          else {
+          Write-Output "No tests defined"
+          }
+
 
       - name: Deploy Application
         shell: pwsh
