@@ -21,14 +21,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Tests
-        shell: bash
+      - name: Run Tests 
+        shell: pwsh
         run: |
-          if [ -f package.json ] && grep -q "\"test\":" package.json; then 
-            npm test; 
-          else 
-            echo "No tests defined"; 
-          fi
+          if (Test-Path package.json -and (Get-Content package.json | Select-String '"test":')) {
+              npm test
+          } else {
+              Write-Output "No tests defined"
+          }
 
       - name: Deploy Application
         shell: pwsh
