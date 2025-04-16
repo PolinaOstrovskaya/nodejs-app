@@ -1,0 +1,9 @@
+﻿{
+  "agentId": 2,
+  "agentName": "HOME-PC",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus13.actions.githubusercontent.com/aMlvaZQuUAAnPRE4e1rDrxIYg34DrBsGU78rXb8xHrNOQfVCWe/",
+  "gitHubUrl": "https://github.com/PolinaOstrovskaya/nodejs-app",
+  "workFolder": "_work"
+}

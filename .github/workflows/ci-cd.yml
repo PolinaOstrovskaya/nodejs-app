@@ -22,6 +22,7 @@ jobs:
         run: npm install
 
       - name: Run Tests
+        shell: bash 
         run: |
           if [ -f package.json ] && grep -q "\"test\":" package.json; then 
             npm test; 
