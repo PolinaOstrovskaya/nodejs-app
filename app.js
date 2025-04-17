@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
             <body>
             
             
-                <img src="\images\kururin-kuru-kuru.gif" alt="я джифка">
+                <img src="/kururin-kuru-kuru.gif" alt="я джифка">
             
                 <button type="button">Click me</button>
             
