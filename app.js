@@ -1,9 +1,10 @@
 // app.js
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = 80;
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 // Новый маршрут, который возвращает HTML‑страницу
 app.get('/', (req, res) => {
     res.send(`<!DOCTYPE html>
@@ -44,7 +45,7 @@ app.get('/', (req, res) => {
             <body>
             
             
-                <img src="kururin-kuru-kuru.gif" alt="я джифка">
+                <img src="/images/kururin-kuru-kuru.gif" alt="я джифка">
             
                 <button type="button">Click me</button>
             
