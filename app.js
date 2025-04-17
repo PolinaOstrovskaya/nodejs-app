@@ -51,5 +51,8 @@ app.get('/', (req, res) => {
             </body>
         </html>`);
 });
+app.get('/kururin-kuru-kuru.gif', (req, res) => {
+  res.sendFile(path.join(__dirname, 'kururin-kuru-kuru.gif'));
+});
 
 app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
