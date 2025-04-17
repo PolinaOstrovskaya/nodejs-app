@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "PolinaOstrovskaya/nodejs-app",
+  "pipelineDirectory": "nodejs-app",
+  "workspaceDirectory": "nodejs-app\\nodejs-app",
+  "repositories": {
+    "PolinaOstrovskaya/nodejs-app": {
+      "repositoryPath": "nodejs-app\\nodejs-app",
+      "lastRunOn": "04/16/2025 12:29:46 +03:00"
+    }
+  },
+  "lastRunOn": "04/16/2025 12:29:46 +03:00"
+}
