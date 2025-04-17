@@ -52,7 +52,12 @@ app.get('/', (req, res) => {
         </html>`);
 });
 app.get('/kururin-kuru-kuru.gif', (req, res) => {
-  res.sendFile(path.join(__dirname, 'kururin-kuru-kuru.gif'));
+  res.sendFile(path.join(__dirname, 'kururin-kuru-kuru.gif'), (err) => {
+    if (err) {
+      console.error('Ошибка при отправке файла:', err);
+      res.status(err.status || 500).end();
+    }
+  });
 });
 
 app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
