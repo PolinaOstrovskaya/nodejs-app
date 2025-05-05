@@ -36,8 +36,12 @@ jobs:
         shell: powershell
         run: |
          Get-Process node -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.Id -Force }
-         Start-Process -FilePath "node" -ArgumentList "app.js" -WindowStyle Normal
-
+         Start-Process -FilePath "node" -ArgumentList "app.js" -NoNewWindow
+         
+      - name: Open Browser
+        shell: powershell
+        run: |
+          Start-Process "chrome.exe" "--new-window http://localhost:80"
           
       - name: Notify Deployment
         run: echo "NodeJS Application deployed successfully!"
