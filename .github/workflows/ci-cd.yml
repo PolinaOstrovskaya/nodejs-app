@@ -41,7 +41,7 @@ jobs:
       - name: Open Browser
         shell: powershell
         run: |
-          start chrome.exe --new-window http://localhost:80
+          Start-Process -FilePath "chrome.exe" -ArgumentList "--new-window", "http://localhost:80"
           
       - name: Notify Deployment
         run: echo "NodeJS Application deployed successfully!"
