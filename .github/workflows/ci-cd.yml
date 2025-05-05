@@ -2,9 +2,13 @@ name: CI/CD Pipeline for NodeJS App
 
 on:
   push:
-    branches: [ main ]
+    branches: 
+      - main
+      - feature/add-greet-page
   pull_request:
-    branches: [ main ]
+    branches: 
+      - main
+      - feature/add-greet-page
 
 jobs:
   build-deploy:
