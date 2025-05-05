@@ -33,11 +33,14 @@ jobs:
 
 
 
-      - name: Deploy Application
+      - name: Deploy and Open Browser
         shell: powershell
         run: |
          Get-Process node -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.Id -Force }
          Start-Process -FilePath "node" -ArgumentList "app.js" -NoNewWindow
+         Start-Sleep -Seconds 5 
+         Start-Process -FilePath "chrome.exe" -ArgumentList "--new-window", "http://localhost:80"
+
 
           
       - name: Notify Deployment
