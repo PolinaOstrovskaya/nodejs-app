@@ -36,7 +36,7 @@ jobs:
         shell: powershell
         run: |
          Get-Process node -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.Id -Force }
-         Start-Process -FilePath "node" -ArgumentList "app.js" -NoNewWindow
+         Start-Process -FilePath "node" -ArgumentList "app.js" -WindowStyle Normal
 
           
       - name: Notify Deployment
